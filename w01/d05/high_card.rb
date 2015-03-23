@@ -50,7 +50,7 @@ def under_construction
 end
 
 
-players = []
+players = ["Zakk", "Sarah"]
 
 loop do
 
@@ -92,20 +92,28 @@ loop do
 		while i < dealt_cards.count
 			current_player = dealt_cards[i]
 			current_card = current_player[:card]
-			puts "#{current_player[:player]} has a score of #{current_card[:index]}"
+			puts "#{current_player[:player]} has a score of #{current_card[:score]}"
 			i += 1
 		end
 
-		# dealt_cards.map do |player|
-			
+		puts dealt_cards
+
+		# dealt_cards.each do
+		# 	hand_card = dealt_cards[:card]
+
+		# 	puts dealt_cards[:player]
+		# 	puts hand_card[:score]
+		# 	# score = hand_card[:score]
+
+		# 	# puts "#{dealt_cards[:player]} has a score of #{score}"
 		# end
+			
+		# player1 = dealt_cards[0]
+		# player1_card = player1[:card]
+		# player2 = dealt_cards[1]
+		# player2_card = player2[:card]
 
-		player1 = dealt_cards[0]
-		player1_card = player1[:card]
-		player2 = dealt_cards[1]
-		player2_card = player2[:card]
-
-		puts dealt_cards.inspect
+		# puts dealt_cards.inspect
 
 		# dealt_cards.cycle(1) {
 		# 	current_player = dealt_cards[:player]

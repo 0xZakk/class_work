@@ -1,17 +1,14 @@
 require 'pry'
-require_relative "lib/person.rb"
+require_relative 'lib/person'
+require_relative 'lib/task'
 
-personal_info = Person.new("Zakk", 24, "Founder", "burrito")
+tasks = [Task.new("Make new friends"), Task.new("Slap the bag")]
 
+personal_info = Person.new("Adam", 50, "Founder, AMAco Global Enterprises", "Burritos")
 
-tasks = ["Make new friends", "Slap the bag"]
+# andy = Person.new("Andy", 19, "Founder, AMAco Global Enterprises", "Korean")
+# binding.pry
 
-# personal_info = {
-#   name: 'Adam',
-#   age: 50,
-#   occupation: 'Founder, AMAco Global Enterprises',
-#   favorite_food: 'Burritos'
-# }
 
 loop do
 
@@ -84,11 +81,21 @@ loop do
           puts("#{idx}. #{task}")
         end
       end
-      display_task_menu()
+      puts("")
+      puts("Options")
+      puts("-------")
+      puts("1. Add task")
+      puts("2. Finish task")
+      puts("0. Back")
+      puts("Enter a number:")
+      task_input = gets().chomp()
 
       # Add task
       if task_input == "1"
-        add_task()
+        puts("Enter new task:")
+        new_task = Task.new(gets().chomp())
+        tasks.push(new_task.description)
+        puts("Task created!")
 
       # Finish task
       elsif task_input == "2"
@@ -112,13 +119,8 @@ loop do
   elsif user_input == "4"
     loop do
       # Personal Info Menu
-      puts("---------------------------------------")
-      puts("Personal Info")
-      puts("-------------")
-      puts("Name          : #{personal_info.name}")
-      puts("Age           : #{personal_info.age}")
-      puts("Occupation    : #{personal_info.occupation}")
-      puts("Favorite Food : #{personal_info.favorite_food}")
+      puts personal_info.menu_info
+
       puts("")
       puts("Options")
       puts("-------")

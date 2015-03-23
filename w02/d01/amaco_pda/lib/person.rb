@@ -8,6 +8,15 @@ class Person
 		@favorite_food = favorite_food
 	end
 
+	def menu_info
+
+		return "
+		(Name          : #{name})
+		(Age           : #{age})
+		(Occupation    : #{occupation})
+		(Favorite Food : #{favorite_food})"
+	end
+
 end
 
 
