@@ -48,7 +48,7 @@ class Trainer
 			"#{@name} can't cary any more Pokemon!"
 		else
 			current_pokemon = @pokemon
-			current_pokemon << pokemon
+			current_pokemon.push(pokemon)
 			@pokemon = current_pokemon
 		end
 	end

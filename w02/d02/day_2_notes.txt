@@ -1,0 +1,94 @@
+Behavior Driven Development
+
+Quick review - 3 lessons
+1. Build on what is known
+2. Care about where you are
+3. Control it by telling it precisely what I want
+
+Learning Objectives:
+  - BDD Mantra
+  - Benefits of TDD and BDD
+  - Create some simple specs
+  - Common compands in rSpec
+ 
+
+BDD Mantra:
+  Red-Green-Refactor
+
+BDD: Behavior Driven Development
+  Having live documentation that specifies the behavior of its system
+    live - documentation that must change when the code changes
+
+BDD: What?
+  A failing spec that drives the creation of code to answer that spec
+    Don't write a line of code until there is a failing test;
+    Write just the right amount of code to answer that test
+
+BDD: How?
+  Write a failing runable spec before changing any code
+  Run a suite of automated tests after every change
+  Write failing test before building a feature
+
+BDD: When?
+  Write the spec which identifies what the program should be doing
+  Watch the test fail
+  Write the code to fix it
+  Refactor
+
+  Red-Green-Refactor
+    Red: spec will fail
+    Green: write code to pass spec
+    Refactor: make it better (while still passing the test)
+
+A language affects the way in which its respective speakers think
+  behavior/specs - lead in the right direction
+
+Single Responsibility Principle
+
+Benefits:
+  Speed - only writting code to pass tests, tests are built based on essential fatures
+  Focus - focusing on customer needs and only essential coe
+  Design - found that led to good design
+    if code is hard to test, it's probably hard to use - test is using your code!
+  Rhythm - drive through your terrain
+    Red, Green, Refactor
+
+
+Want to write tests that force you to write the correct code
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
