@@ -2,7 +2,7 @@ require 'pry'
 require_relative 'lib/person'
 require_relative 'lib/task'
 
-tasks = [Task.new("Make new friends"), Task.new("Slap the bag")]
+tasks = [Task.new("Make new friends"), Task.new("Slap the bag") ]
 
 personal_info = Person.new("Adam", 50, "Founder, AMAco Global Enterprises", "Burritos")
 
@@ -69,16 +69,25 @@ loop do
     end
   # Task Manager
   elsif user_input == "2"
+    completed_tasks = tasks.select{|task| task.completed()}
+    incomplete_tasks = tasks.select{|task| task.completed() == false}
     loop do
       # Tasks Menu
       puts("---------------------------------------")
       puts("Tasks")
       puts("------------")
-      if tasks.length == 0
+
+      completed_tasks.each do |task|
+        puts "DONE: #{completed_tasks.description}"
+      end
+#
+# This part isn't working yet!!!
+#
+      if incomplete_tasks.length == 0
         puts("No tasks to complete")
       else
-        tasks.each_with_index do |task, idx|
-          puts("#{idx}. #{task}")
+        incomplete_tasks.each_with_index do |task, idx|
+            puts("#{idx}. #{task.description}")
         end
       end
       puts("")
@@ -94,15 +103,14 @@ loop do
       if task_input == "1"
         puts("Enter new task:")
         new_task = Task.new(gets().chomp())
-        tasks.push(new_task.description)
+        incomplete_tasks.push(new_task)
         puts("Task created!")
 
       # Finish task
       elsif task_input == "2"
         puts("Enter task number to finish:")
         task_number = gets().chomp().to_i()
-        tasks.delete_at(task_number)
-
+        incomplete_tasks[task_number].mark_completed
       # Back
       elsif task_input == "0"
         break
