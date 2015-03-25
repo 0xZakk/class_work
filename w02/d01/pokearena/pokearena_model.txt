@@ -1,0 +1,90 @@
+Model
+
+Need to build 3 classes with own attributes and behaviors
+
+1. Pokemon
+
+Attributes:
+name - most likely a string
+id - number?
+poke type - string: “fire”, “water”, “grass”
+hp - number - max could be different for each pokemon
+  default/max is 100
+attack - number
+defense - number
+speed - number
+
+Behaviors
+List stats
+  HP: 100/100
+  Attack: 10
+  Defense: 50
+  Speed: 25
+Restore HP (take a potion or be healed by Nurse)
+  - set HP to max
+Take damage
+  - decrease HP by damage amount
+  - if HP = 0, then faint
+  - How does Defense play in?
+give status
+  - if HP = 0, then fainted
+  - HP: 30/100
+
+
+2. Trainer
+
+Attributes
+name - string - i.e. “Ash Kechum”
+age - number (14)
+hometown - Pallet Town
+pokemons - objects
+  - will be one of  pokemons created above
+  - list trainer’s pokemon?
+
+Behavior
+list pokemon
+  Ash’s Pokemon: Pikachu, Squirtle, Charzard
+List pokemon info:
+  Ash’s Pokemon
+    Pikachu: 50/100
+    Squirtle: 100/100
+    Charzard: 100/100
+Add a pokemon
+  - can only cary 6 (if more than 6 pokemon - “Ash can’t cary that many!” - otherwise, add to
+
+4. Nurse
+
+
+Attributes
+name - string
+age - number
+town - string
+
+Behavior
+list their info
+  Nurse Betsy, age 23 from New York
+heal a trainer’s pokemon
+  change all pokemon’s HP to max
+  nurse.heal(trainer)
+    - cycle through a trainer’s pokemon, set HP to 100
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

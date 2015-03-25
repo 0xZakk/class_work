@@ -1,54 +1,68 @@
-require 'pry'
-
 class Pokemon
-	attr_reader :id, :poketype, :attack, :defense, :speed 
-	attr_accessor :name, :hp
+	attr_reader :id, :poketype, :attack, :defense, :speed
+	attr_writer :hp, :name
 
-	def initialize(name, poketype, hp, attack, defense, speed)
+	def initialize(name, id, poketype, hp, attack, defense, speed)
 		@name = name
 		@poketype = poketype
+		@id = id
 		@hp = hp
 		@attack = attack
 		@defense = defense
 		@speed = speed
 	end
 
+def hp
+	if @hp > 100
+		@hp = 100
+		return @hp
+	else
+		return @hp
+	end
+end
+
+def name
+	formatted_name = @name.capitalize
+	return formatted_name
+end
+
 #
 # The folowing are methods that will need to be created to handle the listed behaviors
 #
 
 # List stats
-	def stats
-		puts "HP: #{@hp}"
-		puts "Attack: #{@attack}"
-		puts "Defense: #{@defense}"
-		puts "Speed: #{@speed}"
+	def list_stats
+		poke_stats = [@name, @poketype, @id, @hp, @attack, @defense, @speed]
+		return poke_stats.join("\n")
 	end
 
 # Restore HP
-	def restore(health)
-		@hp += health
-		if @hp > 100
-			puts "Max health reached"
-			@hp = 100
-		end
+	def full_restore
+		@hp = 100
 		return @hp
 	end
 
 # Take damage
-	def damage(damage)
-		@hp -= damage
-		if @hp <= 0
-			@hp = 0
-			puts "HP reached 0. #{@name} fainted."
+	def take_damage
+		if hp == 0
+			return false
+		else
+			@hp -= 20
+			if @hp <= 0
+				@hp = 0
+				return @hp
+			end
+			return @hp			
 		end
-		return @hp
 	end
 
-	
+	def fainted?
+		if @hp == 0
+			return true
+		else
+			return false
+		end
+	end
+
+
 end
-
-
-# squirtle = Pokemon.new("Squirtle", 0001, "water", 100, 25, 50, 10)
-
-# binding.pry
